@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Function Practice</title>
+  </head>
+  <body>
+
+    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script src="./app.js"></script>
+
+    <script>
+      $(document).ready(function() {
+
+        function wordCount(fragment) {
+          return fragment.trim().split(/\s+/).length;
+        }
+        createExample('Word Count', {
+          description: 'Create a function that returns the number of words in a fragment of text',
+          implementation: wordCount,
+          validation: [
+            {
+              input: 'one two three',
+              output: 3
+            },
+            {
+              input: '  ignore  spaces  ',
+              output: 2
+            }
+          ]
+        });
+      });
+    </script>
+
+  </body>
+</html>
