@@ -1,0 +1,17 @@
+.function-body {
+  background-color: #eee;
+  border: 1px solid #999;
+  padding: 5px;
+}
+
+li.success {
+  color: green;
+}
+
+li.incorrect {
+  color: orange;
+}
+
+li.error {
+  color: red;
+}

@@ -2,10 +2,12 @@
 <html>
   <head>
     <title>Function Practice</title>
+    <link rel="stylesheet" href="./app.css" />
   </head>
   <body>
 
     <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
     <script src="./app.js"></script>
 
     <script>
@@ -15,7 +17,8 @@
           return fragment.trim().split(/\s+/).length;
         }
         createExample('Word Count', {
-          description: 'Create a function that returns the number of words in a fragment of text',
+          description: 'Create a function that returns the number of words in \
+            a fragment of text',
           implementation: wordCount,
           validation: [
             {
@@ -27,6 +30,80 @@
               output: 2
             }
           ]
+        });
+
+        createExample('Reverse Text', {
+          description: 'Create a function that reverses the characters in \
+            a string',
+          implementation: null,
+          validation: [
+            {
+              input: 'test value',
+              output: 'eulav tset'
+            },
+            {
+              input: null,
+              output: null
+            },
+            {
+              input: '',
+              output: ''
+            }
+          ]
+        });
+
+        createExample('Tender Change', {
+          description: 'Write a function that given a dollar amount returns \
+            the change in bills and coins. For instance, given \
+            <code>7.23</code> it should return: \
+            <pre>{ fives: 1, ones: 2, dimes: 2, pennies: 3 }</pre>',
+          implementation: null,
+          validation: [
+            {
+              input: 7.23,
+              output: { fives: 1, ones: 2, dimes: 2, pennies: 5 }
+            }
+          ]
+        });
+
+        createExample('The Pluralizer', {
+          description: 'Write a function that takes two arguments, a noun \
+            and a number, and returns the number and the noun in pluralized \
+            form (for instance, "1 dog", "5 cats")',
+          implementation: null,
+          validation: [
+            {
+              input: ['dog', 1],
+              output: '1 dog'
+            },
+            {
+              input: ['cat', 5],
+              output: '5 cats'
+            }
+          ]
+        });
+
+        var movieList = [
+          'The Shawshank Redemption,1994,1043071',
+          'The Godfather,1972,732416',
+          'The Godfather: Part II,1974,474640',
+          'Pulp Fiction,1994,806431',
+          'The Dark Knight,2008,1017508',
+          '12 Angry Men,1957,255846',
+          'Schindler\'s List,1993,528900',
+          'The Lord of the Rings: The Return of the King,2003,738931',
+          'Fight Club,1999,791186',
+          'Star Wars: Episode V - The Empire Strikes Back,1980,503348'
+        ];
+
+        createExample('Movie Parsing', {
+          description: "Given the following comma separated list of IMDb top \
+            rated movies: <pre>var movieList = " +
+            JSON.stringify(movieList, null, '  ') +
+            "</pre> create a function that splits the values into the title, \
+            year, and number of votes and returns a list of movie objects \
+            sorted by year.",
+          implementation: null
         });
       });
     </script>
