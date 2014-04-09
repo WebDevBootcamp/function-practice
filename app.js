@@ -6,9 +6,15 @@ function createExample(name, details) {
     .appendTo(body);
 
   if(details.implementation) {
+    // kind of ugly, but removes leading spaces in the body
+    var functionBody = details.implementation.toString().split(/\n/);
+    functionBody = _.map(functionBody, function(line) {
+      console.warn(line.replace(/^ {8}/, ''));
+      return line.replace(/^ {8}/, '');
+    });
     $('<pre>')
       .addClass('function-body')
-      .text(details.implementation.toString())
+      .text(functionBody.join('\n'))
       .appendTo(body);
 
     var validationList = $('<ul>');

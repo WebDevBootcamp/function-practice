@@ -1,7 +1,7 @@
 .function-body {
   background-color: #eee;
   border: 1px solid #999;
-  padding: 5px;
+  padding: 1em 5em;
 }
 
 li.success {
