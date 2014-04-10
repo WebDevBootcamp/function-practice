@@ -14,6 +14,9 @@
       $(document).ready(function() {
 
         function wordCount(fragment) {
+          if(!fragment) {
+            return 0;
+          }
           return fragment.trim().split(/\s+/).length;
         }
         createExample('Word Count', {
@@ -28,14 +31,31 @@
             {
               input: '  ignore  spaces  ',
               output: 2
+            },
+            {
+              input: null,
+              output: 0
             }
           ]
         });
 
+        /**
+         * Reverses the text in the input string
+         */
+        function reverseText(text) {
+          if(text === null) {
+            return null;
+          }
+          var reversed = '';
+          for(var index = text.length - 1; index >= 0; index--) {
+       		reversed += text[index];
+       	  }
+       	  return reversed;
+        }
         createExample('Reverse Text', {
           description: 'Create a function that reverses the characters in \
             a string',
-          implementation: null,
+          implementation: reverseText,
           validation: [
             {
               input: 'test value',
