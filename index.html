@@ -43,15 +43,11 @@
          * Reverses the text in the input string
          */
         function reverseText(text) {
-          // return null if empty
           if(text === null) {
             return null;
           }
-          // make an empty string
           var reversed = '';
-          // loop backwards over text
           for(var index = text.length - 1; index >= 0; index--) {
-	        // append character to new text
        		reversed += text[index];
        	  }
        	  return reversed;
